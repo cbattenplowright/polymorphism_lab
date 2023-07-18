@@ -9,9 +9,12 @@ public class Aeroplane extends Vehicle {
         this.cruisingAltitude = cruisingAltitude;
     }
 
+    public String makeSound() {
+        return "Whoosh!";
+    }
 
     public String move() {
-        return "This plane is moving";
+        return "This aeroplane is moving";
     }
 
 

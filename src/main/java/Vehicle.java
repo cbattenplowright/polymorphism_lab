@@ -31,12 +31,9 @@ public abstract class Vehicle implements IMove {
         this.travelType = TravelType.valueOf(travelType);
     }
 
-    public String move(Vehicle vehicle) {
-        return "This " + transportType.toString().toLowerCase() + " is moving";
-    }
+    public abstract String makeSound();
 
 //    GETTERS AND SETTERS
-
     public String getManufacturer() {
         return this.manufacturer;
     }
@@ -56,7 +53,6 @@ public abstract class Vehicle implements IMove {
     public String getTravelType(){
         return this.travelType.toString(); // returns and converts the enum value to String
     }
-
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
     }

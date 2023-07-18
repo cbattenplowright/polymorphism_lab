@@ -7,6 +7,10 @@ public class Train extends Vehicle {
         this.numberOfCarriages = numberOfCarriages;
     }
 
+    public String makeSound() {
+        return "Choo-Choo!";
+    }
+
     public String move() {
         return "This train is moving";
     }

@@ -4,6 +4,7 @@ public class Car extends Vehicle {
     private boolean radioOn;
     private EngineType engineType;
 
+
     private enum EngineType {
         Petrol,
         Diesel,
@@ -16,6 +17,10 @@ public class Car extends Vehicle {
         this.numberOfDoors = numberOfDoors;
         this.radioOn = radioOn;
         this.engineType = EngineType.valueOf(engineType);
+    }
+
+    public String makeSound() {
+        return "Vroom!";
     }
 
     public String move() {

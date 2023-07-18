@@ -7,6 +7,10 @@ public class Boat extends Vehicle {
         this.lengthOverall = lengthOverall;
     }
 
+    public String makeSound() {
+        return "Chug-Chug!";
+    }
+
     public String move() {
         return "This boat is moving";
     }

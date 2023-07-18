@@ -32,6 +32,11 @@ public class CarTest {
         assertThat(car.start(new RemoteControl("Samsung"))).isEqualTo("This car was started with a remote control");
     }
 
+    @Test
+    public void canMakeSound(){
+        assertThat(car.makeSound()).isEqualTo("Vroom!");
+    }
+
 //    GETTER AND SETTER TESTS
 
     @Test
@@ -84,5 +89,23 @@ public class CarTest {
     public void canSetNumberOfSeats() {
         car.setNumberOfSeats(4);
         assertThat(car.getNumberOfSeats()).isEqualTo(4);
+    }
+
+    @Test
+    public void canSetMaximumSpeed() {
+        car.setMaximumSpeed(200);
+        assertThat(car.getMaximumSpeed()).isEqualTo(200);
+    }
+
+    @Test
+    public void canSetPublicTransport() {
+        car.setPublicTransport(true);
+        assertThat(car.getPublicTransport()).isEqualTo(true);
+    }
+
+    @Test
+    public void canSetTravelType() {
+        car.setTravelType("Air");
+        assertThat(car.getTravelType()).isEqualTo("Air");
     }
 }

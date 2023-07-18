@@ -13,6 +13,16 @@ public class BoatTest {
     }
 
     @Test
+    public void canMove() {
+        assertThat(boat.move()).isEqualTo("This boat is moving");
+    }
+
+    @Test
+    public void canMakeSound() {
+        assertThat(boat.makeSound()).isEqualTo("Chug-Chug!");
+    }
+
+    @Test
     public void canGetLengthOverall() {
         assertThat(boat.getLengthOverall()).isEqualTo(45);
     }
@@ -23,8 +33,5 @@ public class BoatTest {
         assertThat(boat.getLengthOverall()).isEqualTo(60);
     }
 
-    @Test
-    public void canMove(){
-        assertThat(boat.move()).isEqualTo("This boat is moving");
-    }
+
 }

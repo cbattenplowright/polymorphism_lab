@@ -18,6 +18,12 @@ public class TrainTest {
     }
 
     @Test
+    public void canMakeSound(){
+        assertThat(train.makeSound()).isEqualTo("Choo-Choo!");
+    }
+
+
+    @Test
     public void canGetNumberOfCarriages() {
         assertThat(train.getNumberOfCarriages()).isEqualTo(6);
     }

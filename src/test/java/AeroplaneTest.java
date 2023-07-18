@@ -14,8 +14,14 @@ public class AeroplaneTest {
 
     @Test
     public void canMove() {
-        assertThat(aeroplane.move(aeroplane)).isEqualTo("This aeroplane is moving");
+        assertThat(aeroplane.move()).isEqualTo("This aeroplane is moving");
     }
+
+    @Test
+    public void canMakeSound(){
+        assertThat(aeroplane.makeSound()).isEqualTo("Whoosh!");
+    }
+
 
     @Test
     public void canGetWingspan() {
