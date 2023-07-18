@@ -1,4 +1,4 @@
-public class Car extends Vehicle{
+public class Car extends Vehicle {
 
     private int numberOfDoors;
     private boolean radioOn;
@@ -32,6 +32,18 @@ public class Car extends Vehicle{
 
     public String getEngineType() {
         return this.engineType.toString();
+    }
+
+    public String start(Key key) {
+        return "This car was started with a key";
+    }
+
+    public String start(PushButton pushButton) {
+        return "This car was started with a button";
+    }
+
+    public String start(RemoteControl remoteControl) {
+        return "This car was started with a remote control";
     }
 
 }

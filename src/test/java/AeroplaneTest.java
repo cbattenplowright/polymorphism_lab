@@ -13,6 +13,11 @@ public class AeroplaneTest {
     }
 
     @Test
+    public void canMove() {
+        assertThat(aeroplane.move(aeroplane)).isEqualTo("This aeroplane is moving");
+    }
+
+    @Test
     public void canGetWingspan() {
         assertThat(aeroplane.getWingspan()).isEqualTo(50);
     }
@@ -33,15 +38,4 @@ public class AeroplaneTest {
         aeroplane.setCruisingAltitude(38000);
         assertThat(aeroplane.getCruisingAltitude()).isEqualTo(38000);
     }
-//
-//    @Test
-//    public void canMove(){
-//        assertThat(aeroplane.move()).isEqualTo("This plane is moving");
-//    }
-
-    @Test
-    public void canMove(){
-        assertThat(aeroplane.move(aeroplane)).isEqualTo("This aeroplane is moving");
-    }
-
 }

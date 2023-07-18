@@ -8,32 +8,54 @@ public class CarTest {
     private Car car;
 
     @BeforeEach
-    public void setup(){
+    public void setup() {
         car = new Car("Car", "McLaren", 2, 183, false, "Land", 2, true, "Diesel");
     }
 
     @Test
-    public void canGetManufacturer(){
+    public void canMove() {
+        assertThat(car.move()).isEqualTo("This car is moving");
+    }
+
+    @Test
+    public void canStartCarWithKey() {
+        assertThat(car.start(new Key("mclaren"))).isEqualTo("This car was started with a key");
+    }
+
+    @Test
+    public void canStartCarWithPushButton() {
+        assertThat(car.start(new PushButton("Toyota"))).isEqualTo("This car was started with a button");
+    }
+
+    @Test
+    public void canStartCarWithRemoteControl() {
+        assertThat(car.start(new RemoteControl("Samsung"))).isEqualTo("This car was started with a remote control");
+    }
+
+//    GETTER AND SETTER TESTS
+
+    @Test
+    public void canGetManufacturer() {
         assertThat(car.getManufacturer()).isEqualTo("McLaren");
     }
 
     @Test
-    public void canGetNumberOfSeats(){
+    public void canGetNumberOfSeats() {
         assertThat(car.getNumberOfSeats()).isEqualTo(2);
     }
 
     @Test
-    public void canGetMaximumSpeed(){
+    public void canGetMaximumSpeed() {
         assertThat(car.getMaximumSpeed()).isEqualTo(183);
     }
 
     @Test
-    public void canGetPublicTransport(){
+    public void canGetPublicTransport() {
         assertThat(car.getPublicTransport()).isEqualTo(false);
     }
 
     @Test
-    public void canGetTravelType(){
+    public void canGetTravelType() {
         assertThat(car.getTravelType()).isEqualTo("Land");
     }
 
@@ -59,13 +81,8 @@ public class CarTest {
     }
 
     @Test
-    public void canSetNumberOfSeats(){
+    public void canSetNumberOfSeats() {
         car.setNumberOfSeats(4);
         assertThat(car.getNumberOfSeats()).isEqualTo(4);
-    }
-
-    @Test
-    public void canMove(){
-        assertThat(car.move()).isEqualTo("This car is moving");
     }
 }

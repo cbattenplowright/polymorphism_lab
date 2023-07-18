@@ -13,18 +13,18 @@ public class TrainTest {
     }
 
     @Test
-    public void canGetNumberOfCarriages(){
+    public void canMove() {
+        assertThat(train.move()).isEqualTo("This train is moving");
+    }
+
+    @Test
+    public void canGetNumberOfCarriages() {
         assertThat(train.getNumberOfCarriages()).isEqualTo(6);
     }
 
     @Test
-    public void canSetNumberOfCarriages(){
+    public void canSetNumberOfCarriages() {
         train.setNumberOfCarriages(4);
         assertThat(train.getNumberOfCarriages()).isEqualTo(4);
-    }
-
-    @Test
-    public void canMove(){
-        assertThat(train.move()).isEqualTo("This train is moving");
     }
 }
