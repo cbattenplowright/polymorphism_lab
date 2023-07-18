@@ -9,7 +9,7 @@ public class TrainTest {
 
     @BeforeEach
     public void setup() {
-        train = new Train("Bombardier", 123, 250, true, "Land", 6);
+        train = new Train("Train", "Bombardier", 123, 250, true, "Land", 6);
     }
 
     @Test
@@ -21,5 +21,10 @@ public class TrainTest {
     public void canSetNumberOfCarriages(){
         train.setNumberOfCarriages(4);
         assertThat(train.getNumberOfCarriages()).isEqualTo(4);
+    }
+
+    @Test
+    public void canMove(){
+        assertThat(train.move()).isEqualTo("This train is moving");
     }
 }

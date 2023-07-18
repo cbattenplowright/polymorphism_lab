@@ -9,7 +9,7 @@ public class BoatTest {
 
     @BeforeEach
     public void setup() {
-        boat = new Boat("Osprey", 6, 57, false, "Sea", 45);
+        boat = new Boat("Boat", "Osprey", 6, 57, false, "Sea", 45);
     }
 
     @Test
@@ -21,5 +21,10 @@ public class BoatTest {
     public void canSetLengthOverall() {
         boat.setLengthOverall(60);
         assertThat(boat.getLengthOverall()).isEqualTo(60);
+    }
+
+    @Test
+    public void canMove(){
+        assertThat(boat.move()).isEqualTo("This boat is moving");
     }
 }

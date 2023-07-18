@@ -12,11 +12,11 @@ public class TransportMuseumTest {
     private Boat searib;
 
     @BeforeEach
-    public void setup(){
-        maserati = new Car("Maserati", 2, 179, false, "Land", 2, false, "Diesel");
-        scotsman = new Train("Doncaster Works", 245, 125, true, "Land", 12);
-        boeing = new Aeroplane("Airbus", 456, 500, true, "Air", 50, 35000);
-        searib = new Boat("Osprey", 6, 57, false, "Sea", 45);
+    public void setup() {
+        maserati = new Car("Car", "Maserati", 2, 179, false, "Land", 2, false, "Diesel");
+        scotsman = new Train("Train", "Doncaster Works", 245, 125, true, "Land", 12);
+        boeing = new Aeroplane("Aeroplane", "Airbus", 456, 500, true, "Air", 50, 35000);
+        searib = new Boat("Boat", "Osprey", 6, 57, false, "Sea", 45);
         transportMuseum = new TransportMuseum("British Transport Museum");
         transportMuseum.addVehicle(maserati);
         transportMuseum.addVehicle(scotsman);
@@ -25,7 +25,7 @@ public class TransportMuseumTest {
     }
 
     @Test
-    public void canGetName(){
+    public void canGetName() {
         assertThat(transportMuseum.getName()).isEqualTo("British Transport Museum");
     }
 
@@ -37,7 +37,7 @@ public class TransportMuseumTest {
 
     @Test
     public void canAddVehicle() {
-        Car mclaren = new Car("McLaren", 2, 183, false, "Land", 2, true, "Diesel");
+        Car mclaren = new Car("Car", "McLaren", 2, 183, false, "Land", 2, true, "Diesel");
         assertThat(transportMuseum.vehicleCount()).isEqualTo(4);
         transportMuseum.addVehicle(mclaren);
         assertThat(transportMuseum.vehicleCount()).isEqualTo(5);

@@ -3,16 +3,17 @@ public class Aeroplane extends Vehicle {
     private int wingspan;
     private int cruisingAltitude;
 
-    public Aeroplane(String manufacturer, int numberOfSeats, int maximumSpeed, boolean publicTransport, String travelType, int wingspan, int cruisingAltitude) {
-        super(manufacturer, numberOfSeats, maximumSpeed, publicTransport, travelType);
+    public Aeroplane(String transportType, String manufacturer, int numberOfSeats, int maximumSpeed, boolean publicTransport, String travelType, int wingspan, int cruisingAltitude) {
+        super(transportType, manufacturer, numberOfSeats, maximumSpeed, publicTransport, travelType);
         this.wingspan = wingspan;
         this.cruisingAltitude = cruisingAltitude;
     }
 
-    @Override
-    public void move() {
-        System.out.println("This plane is moving");
+
+    public String move() {
+        return "This plane is moving";
     }
+
 
 //    GETTERS AND SETTERS
 

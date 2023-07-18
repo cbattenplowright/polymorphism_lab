@@ -1,19 +1,29 @@
-public abstract class Vehicle {
+import Interfaces.IMove;
+
+public abstract class Vehicle implements IMove {
 
     protected String manufacturer;
     protected int numberOfSeats;
     protected int maximumSpeed;
     protected boolean publicTransport;
     protected TravelType travelType;
-
+    protected TransportType transportType;
 
     public enum TravelType {
         Land,
         Air,
-        Sea,
+        Sea
     }
 
-    public Vehicle(String manufacturer, int numberOfSeats, int maximumSpeed, boolean publicTransport, String travelType) {
+    public enum TransportType {
+        Car,
+        Train,
+        Aeroplane,
+        Boat
+    }
+
+    public Vehicle(String transportType, String manufacturer, int numberOfSeats, int maximumSpeed, boolean publicTransport, String travelType) {
+        this.transportType = TransportType.valueOf(transportType);
         this.manufacturer = manufacturer;
         this.numberOfSeats = numberOfSeats;
         this.maximumSpeed = maximumSpeed;
@@ -21,7 +31,9 @@ public abstract class Vehicle {
         this.travelType = TravelType.valueOf(travelType);
     }
 
-    public abstract void move(); // Indicates it is an abstract method. Implementation is left to the subclasses of Vehicle
+    public String move(Vehicle vehicle) {
+        return "This " + transportType.toString().toLowerCase() + " is moving";
+    }
 
 //    GETTERS AND SETTERS
 

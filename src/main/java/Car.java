@@ -11,16 +11,15 @@ public class Car extends Vehicle{
         Electric
     }
 
-    public Car(String manufacturer, int numberOfSeats, int maximumSpeed, boolean publicTransport, String travelType, int numberOfDoors, boolean radioOn, String engineType) {
-        super(manufacturer, numberOfSeats, maximumSpeed, publicTransport, travelType);
+    public Car(String transportType, String manufacturer, int numberOfSeats, int maximumSpeed, boolean publicTransport, String travelType, int numberOfDoors, boolean radioOn, String engineType) {
+        super(transportType, manufacturer, numberOfSeats, maximumSpeed, publicTransport, travelType);
         this.numberOfDoors = numberOfDoors;
         this.radioOn = radioOn;
         this.engineType = EngineType.valueOf(engineType);
     }
 
-    @Override
-    public void move() {
-        System.out.println("The car is moving");
+    public String move() {
+        return "This car is moving";
     }
 
     public int getNumberOfDoors() {

@@ -9,7 +9,7 @@ public class CarTest {
 
     @BeforeEach
     public void setup(){
-        car = new Car("McLaren", 2, 183, false, "Land", 2, true, "Diesel");
+        car = new Car("Car", "McLaren", 2, 183, false, "Land", 2, true, "Diesel");
     }
 
     @Test
@@ -52,4 +52,20 @@ public class CarTest {
         assertThat(car.getEngineType()).isEqualTo("Diesel");
     }
 
+    @Test
+    public void canSetManufacturer() {
+        car.setManufacturer("Jaguar");
+        assertThat(car.getManufacturer()).isEqualTo("Jaguar");
+    }
+
+    @Test
+    public void canSetNumberOfSeats(){
+        car.setNumberOfSeats(4);
+        assertThat(car.getNumberOfSeats()).isEqualTo(4);
+    }
+
+    @Test
+    public void canMove(){
+        assertThat(car.move()).isEqualTo("This car is moving");
+    }
 }

@@ -2,14 +2,13 @@ public class Boat extends Vehicle {
 
     private int lengthOverall;
 
-    public Boat(String manufacturer, int numberOfSeats, int maximumSpeed, boolean publicTransport, String travelType, int lengthOverall) {
-        super(manufacturer, numberOfSeats, maximumSpeed, publicTransport, travelType);
+    public Boat(String transportType, String manufacturer, int numberOfSeats, int maximumSpeed, boolean publicTransport, String travelType, int lengthOverall) {
+        super(transportType, manufacturer, numberOfSeats, maximumSpeed, publicTransport, travelType);
         this.lengthOverall = lengthOverall;
     }
 
-    @Override
-    public void move() {
-        System.out.println("The boat is moving");
+    public String move() {
+        return "This boat is moving";
     }
 
 //    GETTERS AND SETTERS
